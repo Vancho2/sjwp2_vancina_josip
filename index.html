@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Josip Vančina — Web programiranje</title>
+    <style>
+      :root {
+        --bg: #14161c;
+        --surface: #1b1e26;
+        --line: #2b2f3a;
+        --text: #e8e6de;
+        --text-dim: #9aa0ac;
+        --accent: #ffb86b;
+        --accent-dim: #8a6b3f;
+        --mono:
+          "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo,
+          Consolas, monospace;
+        --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 5rem 1.5rem 4rem;
+      }
+
+      /* ---------- Header / Hero ---------- */
+
+      header.hero {
+        margin-bottom: 4rem;
+      }
+
+      .tag {
+        font-family: var(--mono);
+        font-size: 0.95rem;
+        color: var(--accent);
+        margin: 0 0 0.6rem;
+      }
+
+      .tag::before {
+        content: "// ";
+        color: var(--accent-dim);
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 5vw, 3rem);
+        line-height: 1.1;
+        margin: 0 0 1rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+
+      .lead {
+        color: var(--text-dim);
+        font-size: 1.08rem;
+        max-width: 54ch;
+        margin: 0;
+      }
+
+      .meta-line {
+        margin-top: 1.6rem;
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        display: flex;
+        gap: 1.4rem;
+        flex-wrap: wrap;
+      }
+
+      .meta-line span b {
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      /* ---------- Section headings ---------- */
+
+      section {
+        margin-bottom: 3.5rem;
+      }
+
+      h2 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin: 0 0 1.2rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      /* ---------- Assignment list ---------- */
+
+      .assignments {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .assignments li {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .assignments a {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        padding: 0.95rem 0.2rem;
+        text-decoration: none;
+        color: inherit;
+        transition:
+          padding-left 0.15s ease,
+          color 0.15s ease;
+      }
+
+      .assignments a:hover,
+      .assignments a:focus-visible {
+        padding-left: 0.5rem;
+        color: var(--accent);
+      }
+
+      .assignments .num {
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        flex: 0 0 2.4rem;
+      }
+
+      .assignments .title {
+        flex: 1 1 auto;
+        font-weight: 500;
+      }
+
+      .assignments .date {
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        color: var(--text-dim);
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+
+      /* ---------- About / footer ---------- */
+
+      .about p {
+        color: var(--text-dim);
+        max-width: 60ch;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding-top: 1.6rem;
+        font-size: 0.9rem;
+        color: var(--text-dim);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+
+      footer a {
+        color: var(--text-dim);
+      }
+
+      footer a:hover {
+        color: var(--accent);
+      }
+
+      @media (max-width: 480px) {
+        .wrap {
+          padding: 3rem 1.2rem 3rem;
+        }
+        .assignments a {
+          flex-wrap: wrap;
+        }
+        .assignments .num {
+          flex-basis: auto;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .assignments a {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="hero">
+        <p class="tag">Skriptni jezici i web programiranje</p>
+        <h1>Josip Vančina</h1>
+
+        <div class="meta-line">
+          <span>Školska godina: <b>2026/27</b></span>
+        </div>
+        <div class="meta-line">
+          <span>Razred: <b>4.E</b></span>
+        </div>
+      </header>
+
+      <section>
+        <h2>Zadaće</h2>
+        <ul class="assignments">
+          <li>
+            <a href="#">
+              <span class="num">01</span>
+              <span class="title">Prva zadaća</span>
+              <span class="date"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="num">02</span>
+              <span class="title">Druga zadaća</span>
+              <span class="date"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="num">03</span>
+              <span class="title">Treća zadaća</span>
+              <span class="date"></span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <span>&copy; 2026 Josip Vančina</span>
+        <a href="mailto:vancinaj@gmail.com">vancinaj@gmail.com</a>
+      </footer>
+    </div>
+  </body>
+</html>
