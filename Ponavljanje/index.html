@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skriptni jezici</title>
+    <style>
+      .centar{
+        justify-content: center;
+      }
+      td{
+        width: 150px;
+        border-collapse: collapse;
+        border: 1px solid black;
+      }
+      body{
+        background-color: #C2F8F7;
+      }
+      h1{
+        font-weight: bold;
+        font-size: 2.5rem;
+      }
+      p{
+        margin-left: 8px;
+        margin-right: 8px;
+        color: rgb(96,96,96);
+      }
+      img{
+        width: 480px;
+        height: 220px;
+      }
+      table{
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      .gore {
+        list-style-type: none;
+        display: flex;
+      }
+      .gore1 {
+        text-align: center;
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="gore">
+      <li class="gore1"><a href="./index.html" target="_blank">Home</a></li>
+      <li class="gore1"><a href="./index1.html" target="_blank">O nama</a></li>
+      <li class="gore1"><a href="./index2.html" target="_blank">Kontakt</a></li>
+    </ul>
+    <h1>HTML, CSS, Canvas i SVG</h1>
+    <p>
+      Canvas je HTML5 element koji, pomoću JavaScript-a, omogućava dinamičko
+      iscrtavanje različitih oblika, dodavanje slika, kreiranje animacija na web
+      stranici i sl. <br /><br />Na platnu (canvas-u) to ne radimo korištenjem
+      novog jezika (kao što je to slučaj kod SVG) ili korištenjem Flasha.
+      Najčešće uporabe platna su:
+    </p>
+    <ul>
+      <li>crtanje grafova,</li>
+      <li>animiranje, igre i</li>
+      <li>kompozicija slike.</li>
+    </ul>
+    <br />
+    <hr />
+    <br />
+    <p>
+      <strong>SVG</strong>(Scalable Vector Graphics) grafika ne gubi kvalitetu
+      prilikom zumiranja ili resize-a.
+      <br />
+      <br />
+      Svi crteži mogu biti interaktivni i dinamički. Svaki element i atribut SVG
+      datoteke može biti animiran. Animacije mogu biti definirane i pokrenute
+      interaktivno ili pomoću skripti.
+      <br></br>
+      SVG integrira druge W3C standarde kao što su DOM, XSL …
+    </p>
+    <br>
+    <hr>
+    <br>
+    <h3><strong>Usporedba SVG i Canvasa</strong></h3>
+    <table>
+      <tr>
+        <td><strong>SVG</strong></td>
+        <td><strong>HTML Canvas</strong></td>
+      </tr>
+      <tr>
+        <td>SVG ima bolju skalabilnost, tako damože imati bolje slike sa velikom kvalitetom na bilo kojoj rezoluciji</td>
+        <td>Canvas ima lošu skalabilnost. Nije prikladan za rad s velikim rezolucijama</td>
+      </tr>
+      <tr>
+        <td>SVG daje bolje performansesa manjim brojem objekata ili većom površinom</td>
+        <td>Canvas dajebolje performanseza rad sa manjim površinama ili većim brojevima objekata</td>
+      </tr>
+      <tr>
+        <td>SVG se može modificirati pomoću skripte ili CSS-a</td>
+        <td>Canvas se može modificirati samo uz pomoć skripte</td>
+      </tr>
+      <tr>
+        <td>SVG je baziran na vektorimai sastavljen je od oblika</td>
+        <td>Canvas je baziran na pixelima</td>
+      </tr>
+    </table>
+    <br>
+    <table>
+      <tr>
+        <td class="centar"><strong>Ime</strong></td>
+        <td>Marko</td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="centar"><strong>Telefon</strong></td>
+        <td>555-1234</td>
+      </tr>
+      <tr>
+        <td>555-8745</td>
+      </tr>
+    </table>
+    <br>
+    <img src="./image.png" alt="Slika iz zadatka">
+    <br>
+    <h2>Primjer SVG-a i Canvasa</h2>
+    <br>
+    <canvas
+      id="myCanvas"
+      width="600"
+      height="700"
+      style="border: 1px solid black"
+    ></canvas>
+    <script>
+      let c = document.getElementById("myCanvas");
+      let ctx = c.getContext("2d");
+      //lice
+      ctx.beginPath();
+      ctx.rect(100,100,350,400);
+      ctx.fillStyle="beige"
+      ctx.fill();
+      //sesir
+      ctx.beginPath();
+      ctx.rect(100,100,350,70);
+      ctx.fillStyle="blue";
+      ctx.fill();
+      //lijevo oko
+      ctx.beginPath();
+      ctx.arc(180, 250, 20, 0, 2 * Math.PI);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+      //desno oko
+      ctx.beginPath();
+      ctx.arc(350, 250, 20, 0, 2 * Math.PI);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+      //nos
+      ctx.beginPath();
+      ctx.moveTo(210, 350);
+      ctx.lineTo(310, 350);
+      ctx.lineTo(260, 300);
+      ctx.fillStyle = "orange";
+      ctx.fill();
+      //Usta
+      ctx.beginPath();
+      ctx.arc(265, 380, 100, 0, Math.PI);
+      ctx.fillStyle = "pink";
+      ctx.fill();
+      //lijevo uho
+      ctx.beginPath();
+      ctx.rect(50,200,50,100);
+      ctx.fillStyle="orange";
+      ctx.fill();
+      //desno uho
+      ctx.beginPath();
+      ctx.rect(450,200,50,100);
+      ctx.fillStyle="orange";
+      ctx.fill();
+      //lijevi dio bowtie
+      ctx.beginPath();
+      ctx.moveTo(130, 600);
+      ctx.lineTo(130, 520);
+      ctx.lineTo(290, 560);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+      //desni dio bowtie
+      ctx.beginPath();
+      ctx.moveTo(430, 600);
+      ctx.lineTo(430, 520);
+      ctx.lineTo(260, 560);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+      //Sredina bowtie
+      ctx.beginPath();
+      ctx.arc(275, 560, 30, 0,2 * Math.PI);
+      ctx.fillStyle = "orange";
+      ctx.fill();
+
+    </script>
+    <svg width="800" height="800">
+      <rect x="100" y="100" width="350" height="400" fill="beige"></rect>
+      <rect x="100" y="100" width="350" height="70" fill="blue"></rect>
+      <circle cx="180" cy="250" r="20" fill="blue"></circle>
+      <circle cx="350" cy="250" r="20" fill="blue"></circle>
+      
+      <polygon points="210, 350, 310,350,260,300" fill="orange"></polygon>
+      <path d="M 405 380 A 105 100 0 0 1 150 380" fill="pink"></path>
+      <polygon points="130,600,130,520,290,560" fill="blue"></polygon>
+      <polygon points="430,600,430,520,260,560" fill="blue"></polygon>
+      <circle cx="270" cy="560" r="30" fill="orange"></circle>
+      <rect x="50" y="200" width="50" height="100" fill="orange"></rect>
+      <rect x="450" y="200" width="50" height="100" fill="orange"></rect>
+    </svg>
+    
+  </body>
+</html>
