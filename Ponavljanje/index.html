@@ -41,6 +41,13 @@
         text-align: center;
         margin-left: 50px;
       }
+      .tipka{
+        background-color: #C2F8F7;
+      }
+      label, input{
+        border-radius: 4px;
+        width: 100%;
+      }
     </style>
   </head>
   <body>
@@ -207,9 +214,15 @@
       <rect x="50" y="200" width="50" height="100" fill="orange"></rect>
       <rect x="450" y="200" width="50" height="100" fill="orange"></rect>
     </svg>
-    <form action="./index2.html">
-      <input type="text" placeholder="Ime">
-      <input type="text" placeholder="prezime">
+    <form action="./forma.html" method="get">
+      <label for="ime">Unesite ime:</label>
+      <input type="text" id="ime" placeholder="Jovo Jovanovic"> <br>
+      <label for="mail">Unesite e-mail:</label>
+      <input type="email" placeholder="example@mail.com" id="mail"> <br>
+      <label for="Datum">Unesite datum:</label>
+      <input type="date" id="Datum"><br>
+      <input type="submit" value="Posalji" class="tipka"><br>
+      <input type="reset" value="Ponisti sve" class="tipka">
     </form>
   </body>
 </html>
