@@ -75,7 +75,7 @@ let polje = [];
 for(let i = 0; i < prompt.length; i++){
     switch(rijec[i]){
         case 'a'{
-            polje += rijec[i] + ",";
+            polje += rijec[i] + ","; OSMI
         }
         case
     }

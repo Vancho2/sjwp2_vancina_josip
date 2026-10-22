@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moja stranica</title>
+  </head>
+  <body>
+    <!-- <h1 id="naslov">Moja stranica</h1>
+    <script>
+      const naslov = document.getElementById("naslov");
+      naslov.textContent = "DOM radi!";      1.
+    </script> -->
+
+    <!-- <p id="opis">asbncjksadbvjks jdfvasdfj dg asdbnf gadf ma nbdf</p>
+    <script>
+      const opis = document.getElementById("opis");
+      opis.textContent = "nesto o meni";     2.
+    </script> -->
+
+    <!-- <h1 id="naslov">naslov</h1>
+    <script>
+      const naslov = document.getElementById("naslov");
+      naslov.style.color = "blue";
+      naslov.style.fontSize = 32;      3.
+    </script> -->
+
+    <!-- <p id="opis">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dolore
+      explicabo et aperiam dolorum nostrum pariatur quaerat nam aliquam
+      similique delectus necessitatibus ab dicta, error, saepe dolorem
+      distinctio doloribus nemo?
+    </p>
+    <script>
+      const opis = document.getElementById("opis");
+      opis.style.background = "beige";
+      opis.style.padding = 10;
+      opis.style.textAlign = "center";    4.
+    </script> -->
+
+    <!-- <button id="gumb">Prikaži poruku</button>
+    <script>
+      const gumb = document.getElementById("gumb");
+      gumb.onclick = function () {
+        alert("Uspješno ste kliknuli gumb!");    5.
+      };
+    </script> -->
+
+    <!-- <p>odlomak 1</p>
+    <p>odlomak 2</p>
+    <p>odlomak 3</p>
+    <script>
+      const svi = document.querySelectorAll("p");
+      svi.forEach(function (el) {
+        el.style.color = "red";    6.
+      });
+    </script> -->
+
+    <!-- <p id="tekst">upozorenje</p>
+    <button id="gumb">gumb</button>
+    <script>
+      const tekst = document.getElementById("tekst");
+      const gumb = document.getElementById("gumb");
+      gumb.onclick = function () {
+        tekst.style.color = "red";
+        tekst.style.fontWeight = "bold";   7.
+        tekst.style.background = "yellow";
+      };
+    </script> -->
+
+    <p class="kartica">kartica</p>
+    <button id="gumb">tamna tema</button>
+    <script>
+      const kard = document.querySelector(".kartica");
+      const gumb = document.getElementById("gumb");
+      gumb.onclick = function () {
+        kard.classList.toggle("tamna-tema");
+      };
+    </script>
+  </body>
+</html>
