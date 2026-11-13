@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="a">
+    <input type="number" id="b">
+    <div>
+        <label for="zbroj">+</label>
+        <input type="radio" name="zbroj" id="zbroj" class="op">
+        <label for="razlika">-</label>
+        <input type="radio" name="razlika" id="razlika" class="op">
+        <label for="umnozak">*</label>
+        <input type="radio" name="umnozak" id="umnozak" class="op">
+        <label for="kolicnik">/</label>
+        <input type="radio" name="kolicnik" id="kolicnik" class="op">
+    </div>
+    <p id="rez">0</p>
+    <button id="gumb" style="width: 100px; height: 40px;">kreni</button>
+    <script>
+        const a = document.getElementById("a");
+        const b = document.getElementById("b");
+        const rez = document.getElementById("rez");
+        const gumb = document.getElementById("gumb");
+        const odabir = document.querySelectorAll(".op");
+
+        let op = function odredi(){
+            odabir.forEach(element => {
+                if(element.value == 1){
+                    return element.textContent;
+                }
+            });
+        }
+
+        document.addEventListener("click", izvrsi(a.textContent,b.textContent, ));
+        function izvrsi(c,d,op){
+            rez.textContent = op(c,d);
+        }
+        function zbroj(c, d){
+            return c+d;
+        }
+        function razlika(c,d){
+            return c-d;
+        }
+        function umnozak(c,d){
+            return c*d;
+        }
+        function kolicnik(c,d){
+            if(d.value != 0){
+                return c/d;
+            }
+            else{
+                alert("djeljenje s nulom");
+                return null;
+            }
+        }
+    </script>
+</body>
+</html>
